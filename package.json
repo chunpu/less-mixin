@@ -1,0 +1,15 @@
+{
+  "name": "lesses",
+  "version": "0.0.1",
+  "description": "Useful less mixin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"readme": "pretty-readme > readme.md",
+	"build": "npm run build-html && npm run build-css",
+	"build-css": "lessc example/main.less > example/style.css",
+	"build-html": "jade example/index.jade"
+  },
+  "author": "",
+  "license": "ISC"
+}

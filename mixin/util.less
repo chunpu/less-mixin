@@ -1,0 +1,38 @@
+.clearfix() {
+	&:before,
+	&:after {
+		display: table;
+		content: '';
+	}
+	&:after {
+		clear: both;
+	}
+	*zoom: 1;
+}
+
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+.font-size(@size, @line-height) {
+	font-size: @size;
+	line-height: @line-height;
+}
+
+.color(@color: @color, @bg-color: @bg-color) {
+	color: @color;
+	background-color: @bg-color;
+}
+
+.color-reverse(@color: @color, @bg-color: @bg-color) {
+	.color(@bg-color, @color)
+}
+
+.opacity(@val) {
+	opacity: @val;
+	// for ie8-
+	@value4ie: (@v * 100);
+	filter: ~"alpha(opacity=@{value4ie})";
+}
