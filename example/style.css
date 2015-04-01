@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+.box {
+  width: 400px;
+  margin: 50px 0;
+}
 .clearfix {
   *zoom: 1;
 }
@@ -28,4 +32,25 @@
 .color-reverse {
   color: #ffffff;
   background-color: #000000;
+}
+.opacity {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.line-limit-1 {
+  white-space: normal;
+  line-height: 1em;
+  overflow: hidden;
+  height: 1em;
+}
+.line-limit-2 {
+  white-space: normal;
+  line-height: 1em;
+  overflow: hidden;
+  height: 2em;
 }

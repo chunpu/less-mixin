@@ -1,6 +1,6 @@
 {
   "name": "lesses",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Useful less mixin",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
 	"build-css": "lessc example/main.less > example/style.css",
 	"build-html": "jade example/index.jade"
   },
-  "author": "",
+  "author": "chunpu",
   "license": "ISC"
 }

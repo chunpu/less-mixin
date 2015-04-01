@@ -1,3 +1,5 @@
+@import './var';
+
 .clearfix() {
 	&:before,
 	&:after {
@@ -7,16 +9,23 @@
 	&:after {
 		clear: both;
 	}
-	*zoom: 1;
+	& when (@ie-compat) {
+		*zoom: 1;
+	}
 }
 
+.center(@width) {
+	margin-left: auto;
+	margin-right: auto;
+	width: @width;
+}
 
 .size(@width, @height) {
 	width: @width;
 	height: @height;
 }
 
-.font-size(@size, @line-height) {
+.font-size(@size, @line-height: 1) {
 	font-size: @size;
 	line-height: @line-height;
 }
@@ -32,7 +41,22 @@
 
 .opacity(@val) {
 	opacity: @val;
-	// for ie8-
-	@value4ie: (@v * 100);
-	filter: ~"alpha(opacity=@{value4ie})";
+	& when (@ie-compat) {
+		// for ie8-
+		@value4ie: (@val * 100);
+		filter: ~"alpha(opacity=@{value4ie})";
+	}
+}
+
+.text-overflow(@type: @text-overflow) {
+	overflow: hidden;
+	text-overflow: @type;
+	white-space: nowrap;
+}
+
+.line-limit(@line-height, @count: 1) {
+	white-space: normal;
+	line-height: @line-height;
+	overflow: hidden;
+	height: @count * @line-height;
 }
