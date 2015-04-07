@@ -1,15 +1,18 @@
 {
   "name": "lesses",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Useful less mixin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"readme": "pretty-readme > readme.md",
-	"build": "npm run build-html && npm run build-css",
-	"build-css": "lessc example/main.less > example/style.css",
-	"build-html": "jade example/index.jade"
+    "readme": "pretty-readme > readme.md",
+    "build": "npm run build-html && npm run build-css",
+    "build-css": "lessc example/main.less > example/style.css",
+    "build-html": "jade -P -p node_modules/jade-gist/. < example/index.jade > example/index.html"
   },
   "author": "chunpu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jade-gist": "^1.0.5"
+  }
 }

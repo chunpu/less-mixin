@@ -14,6 +14,26 @@
 	}
 }
 
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
 .center(@width) {
 	margin-left: auto;
 	margin-right: auto;
@@ -59,4 +79,22 @@
 	line-height: @line-height;
 	overflow: hidden;
 	height: @count * @line-height;
+}
+
+.border(@color, @radius: 1px) {
+	border: 1px solid @color;
+	border-radius: @radius;
+}
+
+.col(@fraction, @all) {
+	// ie6 failed without 0.999
+	width: percentage(@fraction / @all * 0.999);
+}
+
+.col-loop(@index, @all) when(@index > 0) {
+	.col-@{index}-@{all} {
+		.col(@index, @all);
+	}
+
+	.col-loop(@index - 1, @all);
 }
