@@ -56,7 +56,24 @@
 }
 
 .color-reverse(@color: @color, @bg-color: @bg-color) {
-	.color(@bg-color, @color)
+	.color(@bg-color, @color);
+}
+
+.gradient(@start, @end: @start, @isVertical: true) {
+	@angle: ~`(@{isVertical} ? 0 : 90) + 'deg'`;
+
+	& when not(@start = @end) {
+		background-image: linear-gradient(@angle, @start, @end);
+	}
+
+	& when (@start = @end) {
+		background-color: @start;
+	}
+
+	& when (@ie-compat) {
+		@type: `@{isVertical} ? 0 : 1`;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@start), endColorstr=argb(@end), GradientType=@type);
+	}
 }
 
 .opacity(@val) {
