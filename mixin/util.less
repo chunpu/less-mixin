@@ -14,26 +14,6 @@
 	}
 }
 
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.text-center {
-	text-align: center;
-}
-
 .center(@width) {
 	margin-left: auto;
 	margin-right: auto;
@@ -63,11 +43,13 @@
 	@angle: ~`(@{isVertical} ? 0 : 90) + 'deg'`;
 
 	& when not(@start = @end) {
-		background-image: linear-gradient(@angle, @start, @end);
+		// not use background-image
+		background: linear-gradient(@angle, @start, @end);
 	}
 
 	& when (@start = @end) {
-		background-color: @start;
+		// not use background-color
+		background: @start;
 	}
 
 	& when (@ie-compat) {
@@ -101,6 +83,10 @@
 .border(@color, @radius: 1px) {
 	border: 1px solid @color;
 	border-radius: @radius;
+}
+
+.inset() {
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3) inset;
 }
 
 .col(@fraction, @all) {

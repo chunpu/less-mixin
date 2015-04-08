@@ -22,22 +22,28 @@ block main
 	h1.opacity.color-reverse opacity
 	h1.box.text-overflow.color-reverse this is very long text this is very long text this is very long text
 
-	h1.box.color-reverse.line-limit-1 line-limit-1 line-limit-1 line-limit-1
-	h1.box.color-reverse.line-limit-2 line-limit-2 line-limit-2 line-limit-2 line-limit-2 line-limit-2 line-limit-2
-
 	.grid
-		.row
+		.clearfix
 			- var n = 0
 			while n++ < 12
-				.col.col-1-12
+				.left.col-1-12
 					.content
-			.col.col-4-12
+		.clearfix
+			.left.col-4-12
 				.content
-			.col.col-4-12
+			.left.col-4-12
 				.content
-			.col.col-4-12
+			.left.col-4-12
 				.content
-			.col.col-6-12
+		.clearfix
+			.left.col-6-12
 				.content
-			.col.col-6-12
+			.left.col-6-12
 				.content
+			.left.col-8-12
+				.content
+			.left.col-4-12
+				.content
+
+	h1.box.color-reverse.line-limit-1 line-limit-1 line-limit-1 line-limit-1
+	h1.box.color-reverse.line-limit-2 line-limit-2 line-limit-2 line-limit-2 line-limit-2 line-limit-2 line-limit-2
