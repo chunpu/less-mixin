@@ -1,6 +1,6 @@
 {
   "name": "lesses",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Useful less mixin",
   "main": "index.js",
   "scripts": {

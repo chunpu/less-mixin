@@ -4,6 +4,9 @@
 .right {
   float: right;
 }
+.block {
+  display: block;
+}
 .text-left {
   text-align: left;
 }
@@ -13,14 +16,13 @@
 .text-center {
   text-align: center;
 }
-.block {
-  display: block;
-}
 .inline {
   display: inline;
 }
 .inline-block {
   display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 .hidden {
   display: none;
@@ -35,9 +37,24 @@
 .circle {
   border-radius: 50%;
 }
+.round {
+  border-radius: 1000px;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
 * {
   margin: 0;
   padding: 0;
+}
+body {
+  margin: 30px;
 }
 .box {
   width: 400px;
@@ -93,6 +110,12 @@
   width: 100px;
   height: 100px;
 }
+.shadow {
+  box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+}
+.inset-shadow {
+  box-shadow: inset 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+}
 .color {
   color: #000000;
   background-color: #ffffff;
@@ -106,10 +129,11 @@
   filter: alpha(opacity=50);
 }
 .text-overflow {
-  word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  word-wrap: normal;
+  width: 100%;
 }
 .line-limit-1 {
   white-space: normal;
@@ -165,22 +189,14 @@
 .col {
   float: left;
 }
-.row {
-  *zoom: 1;
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
-.row:before,
-.row:after {
-  display: table;
-  content: '';
-}
-.row:after {
-  clear: both;
-}
-.row:before,
-.row:after {
-  display: table;
-  content: '';
-}
-.row:after {
-  clear: both;
+.middle {
+  line-height: 40px;
+  position: relative;
+  top: 50%;
+  margin-top: -20px;
+  height: 40px;
 }

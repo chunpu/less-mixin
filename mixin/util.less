@@ -14,14 +14,17 @@
 	}
 }
 
+.inline-block() {
+	display: inline-block;
+	& when (@ie-compat) {
+		*display: inline;
+		*zoom: 1;
+	}
+}
+
 .size(@width, @height: @width) {
 	width: @width;
 	height: @height;
-}
-
-.font-size(@size, @line-height: 1) {
-	font-size: @size;
-	line-height: @line-height;
 }
 
 .color(@color: @color, @bg-color: @bg-color) {
@@ -42,27 +45,9 @@
 	}
 }
 
-.text-overflow(@type: ellipsis) {
-	word-wrap: normal; // for ie
-	overflow: hidden;
-	text-overflow: @type;
-	white-space: nowrap;
-}
-
-.line-limit(@line-height, @count: 1) {
-	white-space: normal;
-	line-height: @line-height;
-	overflow: hidden;
-	height: @count * @line-height;
-}
-
 .border(@color, @radius: 1px) {
 	border: 1px solid @color;
 	border-radius: @radius;
-}
-
-.inset() {
-	box-shadow: 0 0 10px rgba(0, 0, 0, .3) inset;
 }
 
 .col(@fraction, @all) {
