@@ -20,7 +20,7 @@
 	width: @width;
 }
 
-.size(@width, @height) {
+.size(@width, @height: @width) {
 	width: @width;
 	height: @height;
 }
@@ -39,25 +39,6 @@
 	.color(@bg-color, @color);
 }
 
-.gradient(@start, @end: @start, @isVertical: true) {
-	@angle: ~`(@{isVertical} ? 0 : 90) + 'deg'`;
-
-	& when not(@start = @end) {
-		// not use background-image
-		background: linear-gradient(@angle, @start, @end);
-	}
-
-	& when (@start = @end) {
-		// not use background-color
-		background: @start;
-	}
-
-	& when (@ie-compat) {
-		@type: `@{isVertical} ? 0 : 1`;
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@start), endColorstr=argb(@end), GradientType=@type);
-	}
-}
-
 .opacity(@val) {
 	opacity: @val;
 	& when (@ie-compat) {
@@ -67,7 +48,8 @@
 	}
 }
 
-.text-overflow(@type: @text-overflow) {
+.text-overflow(@type: ellipsis) {
+	word-wrap: normal; // for ie
 	overflow: hidden;
 	text-overflow: @type;
 	white-space: nowrap;

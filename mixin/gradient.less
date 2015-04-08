@@ -1,0 +1,31 @@
+.gradient(@start, @end: @start, @isVertical: true) {
+	@angle: ~`(@{isVertical} ? 0 : 90) + 'deg'`;
+
+	& when not(@start = @end) {
+		// not use background-image
+		background: linear-gradient(@angle, @start, @end);
+	}
+
+	& when (@start = @end) {
+		// not use background-color
+		background: @start;
+	}
+
+	& when (@ie-compat) {
+		@type: `@{isVertical} ? 0 : 1`;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@start), endColorstr=argb(@end), GradientType=@type);
+	}
+}
+
+.reset-filter() {
+	// When you need to remove a gradient background, do not forget to use this to reset
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+.horizontal(@start, @end: @start) {
+	.gradient(@start, @end, false);
+}
+
+.vertical(@start, @end: @start) {
+	.gradient(@start, @end);
+}

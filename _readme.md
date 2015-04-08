@@ -14,3 +14,8 @@ Mixin
 - `.color`
 - `.color-reverse`
 - `.opacity`
+
+Notice
+---
+
+lesses do nothing about autoprefixer, only old ie and w3c

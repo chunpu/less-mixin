@@ -22,6 +22,19 @@
 .inline-block {
   display: inline-block;
 }
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+.show {
+  display: block;
+}
+.invisible {
+  visibility: hidden;
+}
+.circle {
+  border-radius: 50%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -76,6 +89,10 @@
   font-size: 30px;
   line-height: 2;
 }
+.square {
+  width: 100px;
+  height: 100px;
+}
 .color {
   color: #000000;
   background-color: #ffffff;
@@ -89,6 +106,7 @@
   filter: alpha(opacity=50);
 }
 .text-overflow {
+  word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
