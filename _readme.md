@@ -1,8 +1,16 @@
 Usage
 ---
 
+Only use the mixin less
+
 ```less
 @import "mixin/all";
+```
+
+Also use the ripe less by class
+
+```less
+@import "ripe/all";
 ```
 
 Check the [example](http://chunpu.github.io/lesses/example/) page
@@ -28,7 +36,7 @@ TODO
 
 - `.horizontal(start, end)` end default equals to start
 - `.vertical(start, end)`
-- `.reset-filter` only used to reset old ie
+- `.reset-filter` only need when reset old ie
 
 #### position
 
