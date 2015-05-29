@@ -1,0 +1,7 @@
+.img-bg(@src) {
+    background: url(@src) no-repeat center center;
+	& when (@ie-compat) {
+    	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src=@src);
+	    _background: 0;
+	}
+}

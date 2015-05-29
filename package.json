@@ -1,13 +1,13 @@
 {
   "name": "lesses",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Useful less mixin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "readme": "pretty-readme > readme.md",
     "build": "npm run build-html && npm run build-css",
-    "build-css": "lessc example/main.less > example/style.css",
+    "build-css": "lessc example/main.less --autoprefix='> 0%' > example/style.css",
     "build-html": "jade -P -p node_modules/jade-gist/. < example/index.jade > example/index.html"
   },
   "author": "chunpu",

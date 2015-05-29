@@ -32,10 +32,14 @@
   visibility: hidden;
 }
 .circle {
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
 }
 .round {
-  border-radius: 1000px;
+  -webkit-border-radius: 1000px;
+     -moz-border-radius: 1000px;
+          border-radius: 1000px;
 }
 .fixed {
   position: fixed;
@@ -68,6 +72,9 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
 body {
   margin: 30px;
@@ -112,9 +119,14 @@ body {
 }
 .border {
   border: 1px solid #cccccc;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
 }
 .gradient {
+  background: -webkit-linear-gradient(90deg, red, blue);
+  background: -moz-linear-gradient(90deg, red, blue);
+  background: -o-linear-gradient(90deg, red, blue);
   background: linear-gradient(0deg, red, blue);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff0000, endColorstr=#ff0000ff, GradientType=0);
 }
@@ -135,10 +147,14 @@ body {
   height: 100px;
 }
 .shadow {
-  box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
 }
 .inset-shadow {
-  box-shadow: inset 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: inset 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 1px 2px 8px 1px rgba(0, 0, 0, 0.25);
 }
 .color {
   color: #000000;
@@ -154,7 +170,8 @@ body {
 }
 .text-overflow {
   overflow: hidden;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
   width: 100%;
@@ -223,4 +240,10 @@ body {
   top: 50%;
   margin-top: -20px;
   height: 40px;
+}
+.transition {
+  -webkit-transition: all 0.4s ease-in-out;
+     -moz-transition: all 0.4s ease-in-out;
+       -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }

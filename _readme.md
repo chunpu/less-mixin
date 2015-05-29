@@ -93,4 +93,16 @@ Handful class
 Notice
 ---
 
-lesses do nothing about autoprefixer, only old ie and w3c
+lesses do nothing about compat prefix, only old ie and w3c
+
+use [autoprefixer](https://github.com/postcss/autoprefixer) to add vendor prefixes
+
+e.g.
+
+```sh
+npm i -g less-plugin-autoprefix
+lessc style.less --autoprefix="> 1%"
+
+# if you are from China, then use
+lessc style.less --autoprefix="> 0%" # all browser(IE6+) prefix
+```
